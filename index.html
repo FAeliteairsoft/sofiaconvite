@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festa do Pijama da Emily Sofia</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb6e6, #ff80c0);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    img {
+      width: 150px;
+      margin-top: 10px;
+    }
+    .countdown {
+      font-size: 18px;
+      margin: 15px 0;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .confirm-limit {
+      font-size: 16px;
+      color: #ffe0f0;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #ff66b2;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .button:hover {
+      background-color: #ff3385;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎀 Festa do Pijama da Emily Sofia 🎀</h1>
+
+    <!-- imagem relativa -->
+    <img src="ad1629f4-28c5-402b-86bb-c44bf944d2c6.png" alt="Hello Kitty" />
+
+    <p><strong>📅 Início:</strong> Dia 29 de novembro às 19:00 horas<br>
+    <strong>🏁 Saída:</strong> 30 de novembro às 10:00 horas</p>
+
+    <p><strong>📍 Local:</strong> Rua Dr. Eronildes de Carvalho, 304</p>
+    <p>🧸 Traga seu travesseiro!</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <p class="confirm-limit">💌 Confirme sua presença até o dia 15 de novembro!</p>
+
+    <a class="button" href="https://wa.me/5579988647824?text=Olá! Quero confirmar minha presença na Festa do Pijama da Emily Sofia!">
+      💬 Confirmar Presença
+    </a>
+  </div>
+
+  <script>
+    const eventDate = new Date('November 29, 2025 19:00:00').getTime();
+    const countdownEl = document.getElementById('countdown');
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `⏰ Faltam ${days}d ${hours}h ${minutes}m ${seconds}s para a festa!`;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = '🎉 A festa começou!';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
